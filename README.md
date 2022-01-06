@@ -1,6 +1,6 @@
 # Moments
 
-> ### Document moments from the day
+> ### Document moments from every day life
 
 Built in Elixir, Phoenix, LiveView, and Tailwind CSS.
 
