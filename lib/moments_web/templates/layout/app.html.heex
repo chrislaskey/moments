@@ -1,0 +1,5 @@
+<%= unless Map.get(@conn.assigns, :live_module) do %>
+  <%= render "_flash.html", Map.put(assigns, :flash, get_flash(@conn)) %>
+<% end %>
+
+<%= @inner_content %>

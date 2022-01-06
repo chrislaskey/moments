@@ -1,0 +1,23 @@
+@import "./phoenix.css";
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Custom Tailwind Components */
+
+html {
+  font-family: 'Nunito', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+
+p,
+div,
+span {
+  @apply text-slate-600;
+}
+
+@layer components {
+  .btn-indigo {
+    @apply bg-indigo-500 text-white font-bold py-1 px-3 rounded;
+  }
+}

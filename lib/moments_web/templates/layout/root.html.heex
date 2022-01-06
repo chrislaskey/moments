@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" style="background: #121216;">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <%= csrf_meta_tag() %>
+    <%= live_title_tag assigns[:page_title] || "Moments", suffix: "" %>
+    <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")}/>
+    <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body>
+    <header class="-mt-2 pt-8 w-content flex flex-col items-center">
+      <div class="flex">
+        <div class="mx-2 flex flex-col">
+          <h1 class="mt-7 font-bold text-4xl leading-none text-slate-500">moments</h1>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="w-content py-8 flex flex-col items-center">
+      <%= @inner_content %>
+    </main>
+
+    <footer class="py-5 w-content flex flex-col items-center">
+      <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
+        <%= link "Live Dashboard", to: Routes.live_dashboard_path(@conn, :home), class: "text-orange-400 hover:text-yellow-500" %>
+      <% end %>
+    </footer>
+  </body>
+</html>
