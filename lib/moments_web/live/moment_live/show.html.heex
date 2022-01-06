@@ -1,0 +1,26 @@
+<h1>Show Moment</h1>
+
+<%= if @live_action in [:edit] do %>
+  <.modal return_to={Routes.moment_show_path(@socket, :show, @moment)}>
+    <.live_component
+      module={MomentsWeb.MomentLive.FormComponent}
+      id={@moment.id}
+      title={@page_title}
+      action={@live_action}
+      moment={@moment}
+      return_to={Routes.moment_show_path(@socket, :show, @moment)}
+    />
+  </.modal>
+<% end %>
+
+<ul>
+
+  <li>
+    <strong>Body:</strong>
+    <%= @moment.body %>
+  </li>
+
+</ul>
+
+<span><%= live_patch "Edit", to: Routes.moment_show_path(@socket, :edit, @moment), class: "button" %></span> |
+<span><%= live_redirect "Back", to: Routes.moment_index_path(@socket, :index) %></span>

@@ -18,6 +18,13 @@ defmodule MomentsWeb.Router do
     pipe_through :browser
 
     get "/", HomeController, :index
+
+    live "/moments", MomentLive.Index, :index
+    live "/moments/new", MomentLive.Index, :new
+    live "/moments/:id/edit", MomentLive.Index, :edit
+
+    live "/moments/:id", MomentLive.Show, :show
+    live "/moments/:id/show/edit", MomentLive.Show, :edit
   end
 
   # Other scopes may use custom stacks.

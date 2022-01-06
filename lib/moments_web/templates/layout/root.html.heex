@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="background: #121216;">
+<html lang="en" style="background: #121206;">
   <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -11,7 +11,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -23,11 +23,12 @@
   </head>
   <body>
     <header class="-mt-2 pt-8 w-content flex flex-col items-center">
-      <div class="flex">
-        <div class="mx-2 flex flex-col">
-          <h1 class="mt-7 font-bold text-4xl leading-none text-slate-500">moments</h1>
+      <a href="/" class="flex">
+        <%= icon(:stars, class: "h-12 w-12 text-slate-600 text-yellow-200") %>
+        <div class="mt-1 ml-1.5">
+          <h1 class="font-medium text-3xl text-stone-300">moments</h1>
         </div>
-      </div>
+      </a>
     </header>
 
     <main id="main" class="w-content py-8 flex flex-col items-center">
@@ -36,7 +37,7 @@
 
     <footer class="py-5 w-content flex flex-col items-center">
       <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
-        <%= link "Live Dashboard", to: Routes.live_dashboard_path(@conn, :home), class: "text-orange-400 hover:text-yellow-500" %>
+        <%= link "Live Dashboard", to: Routes.live_dashboard_path(@conn, :home), class: "text-slate-700 hover:text-yellow-500" %>
       <% end %>
     </footer>
   </body>

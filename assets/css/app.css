@@ -7,13 +7,21 @@
 /* Custom Tailwind Components */
 
 html {
-  font-family: 'Nunito', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+  font-family: 'Quicksand', 'Work Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+
+a {
+  @apply text-blue-400;
+}
+
+a:hover {
+  @apply text-blue-600;
 }
 
 p,
 div,
 span {
-  @apply text-slate-600;
+  @apply text-stone-600;
 }
 
 @layer components {

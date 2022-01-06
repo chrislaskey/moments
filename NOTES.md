@@ -1,7 +1,7 @@
 ## Setup
 
 ```bash
-mix phx.new moments --database sqlite3
+mix phx.new moments --database sqlite3 --live
 ```
 
 We are almost there! The following steps are missing:
