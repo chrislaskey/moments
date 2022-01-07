@@ -114,6 +114,11 @@ RUN mkdir -p "/home/${USER}/app/code" && \
 # Copy release from `build` container and set entrypoint
 COPY --from=build --chown="${USER}":"${USER}" /app/_build/"${MIX_ENV}"/rel/moments ./code/
 
+# Switch back to root user so user id and group id can be updated using special Docker
+# environmental variables `PUID` and `PGID`
+# ----------------------------------------------------------------------------------- #
+USER root
+
 # Setup the mix release binary as the container entrypoint
 ENTRYPOINT ["code/bin/moments"]
 
